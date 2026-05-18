@@ -1,3 +1,4 @@
+using Assets.Scripts.Interactions;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded;
 
-
+    private bool canAttack = false;
 
     void Start()
     {
@@ -58,6 +59,11 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isRunning", false);
         }
         transform.localScale = scale; //Aplica la escala al jugador para que mire en la dirección correcta.
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canAttack) 
+            {
+            anim.SetTrigger("Attack");
+            }
     }
 
 
@@ -70,5 +76,16 @@ public class PlayerController : MonoBehaviour
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundLayer);
+    }
+
+
+    public void IncreaseJump(float amount)
+    {
+        jumpForce += amount;
+    }
+
+    public void UnlockAttack()
+    {
+        canAttack = true;
     }
 }
