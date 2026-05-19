@@ -9,11 +9,6 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private InteractionUI interactionUI;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (currentInteractable != null && currentInteractable.CanInteract())

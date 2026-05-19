@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8859546396480233174}
   m_Layer: 3
   m_Name: Palanca
-  m_TagString: Untagged
+  m_TagString: Lever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,4 +152,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   openedLever: {fileID: 8193514562749916531, guid: 23d76de7ce1b9f64e8344600da6618d8, type: 3}
+  openDoorSound: {fileID: 0}
   notificationUI: {fileID: 0}
