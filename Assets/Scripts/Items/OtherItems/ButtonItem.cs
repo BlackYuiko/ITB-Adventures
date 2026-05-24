@@ -35,7 +35,7 @@ public class ButtonItem : MonoBehaviour, IInteractable
         Destroy(squareEnemies);
 
 
-        MusicManager.instance.PlayMusic(newMusic);
+        MusicManager.Instance.PlayMusic(newMusic);
 
         notificationUI.ShowNotification("Oh no, what is happening?");
 

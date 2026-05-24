@@ -3,25 +3,23 @@ using UnityEngine;
 
 public class CoinUI : MonoBehaviour
 {
-    public static CoinUI instance;
+    [SerializeField] private TextMeshProUGUI coinText;
 
-    public TextMeshProUGUI coinText;
-
-    private int coins = 0;
-
-    private void Awake()
+    private void OnEnable()
     {
-        instance = this;
-        UpdateUI();
+        GameEvents.OnCoinsChanged += UpdateUI;
+    }
+    private void OnDisable()
+    {
+        GameEvents.OnCoinsChanged -= UpdateUI;
     }
 
-    public void AddCoin()
+    private void Start()
     {
-        coins++;
-        UpdateUI();
+        UpdateUI(GameManager.Instance.Coins);
     }
 
-    void UpdateUI()
+    void UpdateUI(int coins)
     {
         coinText.text = $"{coins}/4";
 

@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class Trophy : MonoBehaviour
+public class MusicZone : MonoBehaviour
 {
+    [SerializeField] private AudioClip newMusic;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.WinGame();
+            MusicManager.Instance.PlayMusic(newMusic);
         }
     }
 }

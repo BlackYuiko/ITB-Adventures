@@ -14,8 +14,8 @@ public class CoinItem : MonoBehaviour
         {
             collected = true;
 
-            CoinUI.instance.AddCoin();
-            
+            GameManager.Instance.AddCoin();
+
             AudioSource.PlayClipAtPoint(
                 collectSound,
                 transform.position,

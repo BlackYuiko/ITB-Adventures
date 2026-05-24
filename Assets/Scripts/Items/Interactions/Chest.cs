@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour, IInteractable
 {
+    [SerializeField] private NotificationUI notificationUI;
+
     [SerializeField] private Sprite openedChest;
 
     private SpriteRenderer sp;
 
     private bool opened = false;
-
-    [SerializeField] private NotificationUI notificationUI;
 
     public void Start()
     {
@@ -22,11 +22,11 @@ public class Chest : MonoBehaviour, IInteractable
 
         opened = true;
 
-        sp.sprite = openedChest; // Cambia el sprite
+        sp.sprite = openedChest;
 
         notificationUI.ShowNotification("You found a SWORD ('Left Click') and a KEY!");
 
-        PlayerController player = FindAnyObjectByType<PlayerController>(); //Encuentra al jugador
+        PlayerController player = FindAnyObjectByType<PlayerController>();
         player.UnlockAttack();
         Door door = FindAnyObjectByType<Door>();
         door.UnlockKey();

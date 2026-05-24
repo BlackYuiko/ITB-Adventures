@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Sprite openedLever;
-
-    [SerializeField] private AudioClip openDoorSound;
     [SerializeField] private NotificationUI notificationUI;
+
+    [SerializeField] private Sprite openedLever;
+    [SerializeField] private AudioClip openDoorSound;
 
     private SpriteRenderer sp;
 
@@ -34,10 +34,8 @@ public class Lever : MonoBehaviour, IInteractable
             );
 
         notificationUI.ShowNotification("Oh what was that noise?");
-
-
-        
     }
+
     public string GetInteractionPrompt()
     {
         return "Press E to use the lever";

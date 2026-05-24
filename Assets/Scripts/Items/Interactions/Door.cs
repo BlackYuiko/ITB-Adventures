@@ -10,7 +10,6 @@ public class Door : MonoBehaviour, IInteractable
     private bool opened = false;
     private bool hasKey = false;
     
-
     public void Start()
     {
         bc = GetComponent<BoxCollider2D>();
@@ -23,9 +22,8 @@ public class Door : MonoBehaviour, IInteractable
         opened = true;
 
         gameObject.SetActive(false);
-
-        // reproducir sonido
     }
+
     public string GetInteractionPrompt()
     {
         if (!hasKey) return "You need a key to open the door";
@@ -37,6 +35,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         return !opened;
     }
+
     public void UnlockKey()
     {
         hasKey = true;

@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class potion : MonoBehaviour, IInteractable
 {
+    [SerializeField] private NotificationUI notificationUI;
 
     [SerializeField] private float jumpBoost = 3f;
 
     private SpriteRenderer sp;
 
     private bool taken = false;
-
-    [SerializeField] private NotificationUI notificationUI;
 
     void Start()
     {

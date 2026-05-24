@@ -8,10 +8,10 @@ public class GiantDoor : MonoBehaviour, IInteractable
 
     private SpriteRenderer sp;
 
+    public Transform destino;
+
     private bool leverUsed = false;
     private bool canEnter = false;
-
-    public Transform destino;
 
     public void Start()
     {
@@ -27,6 +27,7 @@ public class GiantDoor : MonoBehaviour, IInteractable
         PlayerController player  = FindAnyObjectByType<PlayerController>();
         player.transform.position = destino.position;
     }
+
     public string GetInteractionPrompt()
     {
         if (!leverUsed) return "This door doesn't have a dook";
@@ -38,6 +39,7 @@ public class GiantDoor : MonoBehaviour, IInteractable
     {
         return !canEnter;
     }
+
     public void OpenDoor()
     {
         leverUsed = true;
